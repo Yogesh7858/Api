@@ -1,0 +1,38 @@
+[
+    {
+        "name":"iphone",
+        "price":154,
+        "company":"apple",
+        "rating":"5"
+    },
+    {
+        "name":"iphone10",
+        "price":1154,
+        "company":"apple",
+        "rating":"5"
+    },
+    {
+        "name":"watch",
+        "price":204,
+        "company":"apple",
+        "rating":"2"
+    },
+    {
+        "name":"mi20",
+        "price":104,
+        "company":"mi",
+        "rating":"5"
+    },
+    {
+        "name":"dell gaming",
+        "price":15400,
+        "company":"dell",
+        "rating":"3"
+    },
+    {
+        "name":"laptop",
+        "price":444,
+        "company":"lenovo",
+        "rating":"4"
+    }
+]
