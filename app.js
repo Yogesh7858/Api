@@ -24,7 +24,7 @@ app.post('/api/products', (req, res) => {
     actualData.push(data);
     // console.log('Received data:', data);
     // Send a response
-    res.send('POST request received');
+    res.send(data);
 });
 
 
