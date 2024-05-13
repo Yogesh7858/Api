@@ -18,10 +18,10 @@ app.use("/api/products",product_routes);
 app.post('/api/products', (req, res) => {
     const data = req.body; // Access the request body
     // Process the data as needed
-    // console.log(data);
+    console.log(data);
     // console.log('Received data:', data);
     // Send a response
-    res.send('POST request received',data);
+    res.send('POST request received');
 });
 
 
