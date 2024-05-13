@@ -3,12 +3,14 @@ const express= require("express");
 const app =express();
 const product_routes =require('./routes/products');
 const connectDb =require("./db/connect");
+const actualData=require("./products.json")
 
 const port=process.env.port||5000;
 
 
 
 app.get("/",(req,res) => {
+    console.log("ram");
     res.send("hii i am connected")
 })
 
@@ -19,6 +21,7 @@ app.post('/api/products', (req, res) => {
     const data = req.body; // Access the request body
     // Process the data as needed
     console.log(data);
+    actualData.push(data);
     // console.log('Received data:', data);
     // Send a response
     res.send('POST request received');
