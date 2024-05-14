@@ -22,8 +22,7 @@ app.post('/api/products', async(req, res) => {
     let data= await connectDb(process.env.Mongodb_url);
     let userData = req.body; // Access the request body
     let result=await data.insert(userData);
-    // console.log(data)
-    res.send(result);
+    res.json(result);
 });
 
 
