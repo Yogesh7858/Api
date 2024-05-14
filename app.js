@@ -18,12 +18,26 @@ app.use("/api/products",product_routes);
 app.use(express.json());
 
 
-app.post('/api/products', async(req, res) => {
-    let data= await connectDb(process.env.Mongodb_url);
-    let userData = req.body; // Access the request body
-    let result=await data.insert(userData);
-    res.json(result);
+app.post('/api/products', async (req, res) => {
+    try {
+        // Establish database connection
+        let data = await connectDb(process.env.Mongodb_url);
+        
+        // Extract data from request body
+        let userData = req.body;
+        
+        // Insert user data into the database
+        let result = await data.insert(userData);
+        
+        // Send success response
+        res.json(result); // Assuming result is JSON serializable
+    } catch (error) {
+        // Send error response
+        console.error("Error:", error);
+        res.status(500).send("Internal Server Error");
+    }
 });
+
 
 
 const start=async ()=> {
