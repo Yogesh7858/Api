@@ -18,9 +18,11 @@ app.use("/api/products",product_routes);
 app.use(express.json());
 
 
-app.post('/api/products', (req, res) => {
-    const data = req.body; // Access the request body
-    res.send(data);
+app.post('/api/products', async(req, res) => {
+    let data= await connectDb();
+    const userData = req.body; // Access the request body
+    const result=await data.insert(userData);
+    res.send(result);
 });
 
 
