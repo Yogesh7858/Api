@@ -19,7 +19,7 @@ app.use(express.json());
 
 
 app.post('/api/products', async(req, res) => {
-    let data= await connectDb();
+    let data= await connectDb(process.env.Mongodb_url);
     let userData = req.body; // Access the request body
     let result=await data.insert(userData);
     // console.log(data)
