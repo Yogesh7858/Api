@@ -34,7 +34,7 @@ app.post('/api/products', async (req, res) => {
     } catch (error) {
         // Send error response
         console.error("Error:", error);
-        res.status(500).send("Internal Server Error");
+        res.status(500).send(error);
     }
 });
 
