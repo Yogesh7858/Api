@@ -20,9 +20,9 @@ app.use(express.json());
 
 app.post('/api/products', async(req, res) => {
     let data= await connectDb();
-    let userData = req.body; // Access the request body
-    let result=await data.insert(userData);
-    res.send(result);
+    // let userData = req.body; // Access the request body
+    // let result=await data.insert(userData);
+    res.send(data);
 });
 
 
