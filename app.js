@@ -15,15 +15,11 @@ app.get("/",(req,res) => {
 })
 
 app.use("/api/products",product_routes);
+app.use(express.json());
 
 
 app.post('/api/products', (req, res) => {
     const data = req.body; // Access the request body
-    // Process the data as needed
-    console.log(data);
-    actualData.push(data);
-    // console.log('Received data:', data);
-    // Send a response
     res.send(data);
 });
 
