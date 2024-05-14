@@ -30,10 +30,11 @@ app.post('/api/products', async (req, res) => {
         let result = await data.insert(userData);
         
         // Send success response
+        console.log("enter");
         res.send(result.json()); // Assuming result is JSON serializable
     } catch (error) {
         // Send error response
-        console.error("Error:", error);
+        console.log("Error:", error);
         res.status(500).send(error);
     }
 });
